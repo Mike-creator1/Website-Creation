@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Feet Bardiqi – Mobile Fusspflege Zürich</title>
+<meta name="description" content="Beauty Feet Bardiqi – professionelle mobile Fusspflege in Zürich. Ich komme zu Ihnen nach Hause. Komplette Fusspflege ca. 1 Stunde für CHF 60. Termine: 076 244 67 97.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#2f9e8f;        /* teal / spa */
+    --accent-deep:#227a6e;
+    --ink:#1f2a28;
+    --muted:#5f6f6c;
+    --bg:#f6faf9;
+    --bg-soft:#e6f2ef;
+    --bg-deep:#153430;       /* deep teal */
+    --line:#d9e8e4;
+    --max:1140px;
+    --font:'Poppins',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);line-height:1.7;background:var(--bg);font-weight:400}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{padding:92px 0}
+  h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
+  h2{font-size:clamp(28px,4.2vw,42px);margin-bottom:14px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:14px}
+  .lead{color:var(--muted);font-size:18px;max-width:600px;font-weight:300}
+  .center{text-align:center;margin-inline:auto}
+  .btn{display:inline-block;font-family:var(--font);background:var(--accent);color:#fff;padding:15px 34px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s;border:2px solid var(--accent);cursor:pointer}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px);box-shadow:0 12px 26px rgba(47,158,143,.3)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent);color:#fff}
+  .btn.light{background:#fff;color:var(--accent-deep);border-color:#fff}
+  .btn.light:hover{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,250,249,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-size:22px;font-weight:700;letter-spacing:-.01em}
+  .logo b{color:var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--muted);transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{background:var(--accent);color:#fff!important;padding:9px 20px;border-radius:999px}
+  .nav-cta:hover{background:var(--accent-deep)}
+  .burger{display:none;font-size:26px;background:none;border:none;cursor:pointer;color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden;text-align:center;padding:104px 0 96px;background:
+    radial-gradient(720px 400px at 50% -10%,#c9e9e2 0%,transparent 62%),
+    linear-gradient(180deg,#e4f3ef,var(--bg))}
+  .hero .pill{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--accent-deep);padding:8px 18px;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:22px;box-shadow:0 6px 18px rgba(47,158,143,.12)}
+  .hero h1{font-size:clamp(36px,6vw,62px);line-height:1.08;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{font-size:clamp(17px,2.3vw,21px);color:var(--muted);max-width:560px;margin:0 auto 34px;font-weight:300}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  .strip{background:var(--bg-deep);color:#cfe3df}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 50px;padding:26px 24px;text-align:center}
+  .strip div{font-size:15px;font-weight:300}
+  .strip b{color:#7fd3c6;font-weight:600}
+
+  /* Angebot / Ablauf */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:34px 28px;transition:.25s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(47,158,143,.12);border-color:var(--accent)}
+  .card .ico{font-size:32px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px;font-weight:300}
+
+  /* Preis-Highlight */
+  .price-band{background:var(--bg-soft)}
+  .price-card{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:44px 40px;text-align:center;box-shadow:0 20px 50px rgba(47,158,143,.1)}
+  .price-card .amount{font-size:56px;font-weight:700;color:var(--accent);line-height:1}
+  .price-card .amount small{font-size:20px;color:var(--muted);font-weight:500}
+  .price-card ul{list-style:none;text-align:left;max-width:420px;margin:24px auto 28px;display:grid;gap:10px}
+  .price-card li{padding-left:30px;position:relative;color:var(--ink);font-weight:300}
+  .price-card li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .price-card .hint{color:var(--muted);font-size:14px;margin-top:6px;font-weight:300}
+
+  .about{}
+  .about .wrap{max-width:800px;text-align:center}
+  .about p{color:var(--muted);font-size:18px;font-weight:300;margin-top:8px}
+
+  .reviews{background:var(--bg-soft)}
+  .reviews .grid{grid-template-columns:repeat(3,1fr)}
+  .review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 26px}
+  .review .stars{color:var(--accent);letter-spacing:3px;margin-bottom:12px}
+  .review p{font-size:16px;font-style:italic;color:var(--ink);margin-bottom:12px;font-weight:300}
+  .review b{color:var(--accent-deep);font-size:14px}
+  .note{background:#dcefeb;border:1px dashed var(--accent);color:#2c5a53;font-size:13px;padding:11px 16px;border-radius:10px;margin-top:28px;text-align:center}
+
+  .contact{background:var(--bg-deep);color:#cfe3df}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:#7fd3c6}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:46px;align-items:start}
+  .contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+  .contact-item .ico{font-size:20px}
+  .contact-item b{display:block;margin-bottom:3px;color:#fff;font-weight:600;font-size:15px}
+  .contact-item a,.contact-item span{color:#a9c6c1;font-weight:300}
+  .contact-item a:hover{color:#7fd3c6}
+  .fbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+
+  form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:34px 30px}
+  form h3{color:#fff;font-size:23px;margin-bottom:6px}
+  form .sub{color:#a9c6c1;font-size:14px;margin-bottom:20px;font-weight:300}
+  .field{margin-bottom:15px}
+  label{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#a9c6c1;margin-bottom:6px}
+  input,textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;padding:12px 14px;font-family:var(--font);font-size:15px;border-radius:10px;transition:.2s}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.12)}
+  textarea{resize:vertical;min-height:110px}
+  form .btn{width:100%;margin-top:6px}
+
+  .cta{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{opacity:.95;font-size:18px;max-width:520px;margin:0 auto 30px;font-weight:300}
+
+  footer{background:#0f2320;color:#7f958f;padding:44px 0;text-align:center;font-size:14px;font-weight:300}
+  footer .logo{color:#fff;margin-bottom:10px;display:inline-block}
+  footer .logo b{color:#7fd3c6}
+
+  @media(max-width:860px){
+    .grid,.reviews .grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--bg);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line);display:none}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+  @media(max-width:520px){ section{padding:64px 0} .price-card{padding:34px 24px} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Beauty Feet <b>Bardiqi</b></a>
+    <div class="nav-links" id="menu">
+      <a href="#angebot">Angebot</a>
+      <a href="#preis">Preis</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#kontakt" class="nav-cta">Termin anfragen</a>
+    </div>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">🚗 Mobil – ich komme zu Ihnen nach Hause</div>
+    <h1>Gepflegte Füsse,<br><em>ganz bequem bei Ihnen.</em></h1>
+    <p>Professionelle mobile Fusspflege in Zürich. Entspannen Sie zu Hause – ich bringe alles mit und verwöhne Ihre Füsse.</p>
+    <div class="hero-btns">
+      <a href="tel:+41762446797" class="btn">📞 Termin anrufen</a>
+      <a href="#angebot" class="btn ghost">Mein Angebot</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>🚗 <b>Mobil</b> bei Ihnen zu Hause</div>
+    <div>🕐 Ca. <b>1 Stunde</b> Verwöhnzeit</div>
+    <div>♿ <b>Günstiger</b> für IV-Bezüger</div>
+  </div>
+</div>
+
+<!-- Angebot: τα πραγματικά βήματα της θεραπείας (από Facebook) -->
+<section id="angebot">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Meine Fusspflege</div>
+      <h2>Das ist alles inklusive</h2>
+      <p class="lead center">Eine komplette, wohltuende Fusspflege – Schritt für Schritt.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">🛁</div><h3>Entspannendes Fussbad</h3><p>Ein reinigendes und pflegendes Fussbad zum Ankommen und Entspannen.</p></div>
+      <div class="card"><div class="ico">🔎</div><h3>Fussdiagnose</h3><p>Ich schaue mir Ihre Füsse genau an und gehe auf Ihre Bedürfnisse ein.</p></div>
+      <div class="card"><div class="ico">✂️</div><h3>Nägel & Nagelhaut</h3><p>Nägel kürzen und in Form bringen, Falz und Nagelhäutchen bearbeiten.</p></div>
+      <div class="card"><div class="ico">🌿</div><h3>Hornhaut entfernen</h3><p>Sanfte Entfernung von Hornhaut für angenehm glatte Füsse.</p></div>
+      <div class="card"><div class="ico">💆</div><h3>Verwöhnmassage</h3><p>Eine entspannende Fussmassage zum Abschluss – pure Erholung.</p></div>
+      <div class="card"><div class="ico">💅</div><h3>Lackieren auf Wunsch</h3><p>Zum Schluss lackiere ich Ihre Nägel gerne in Ihrer Wunschfarbe.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Preis-Highlight (πραγματική τιμή) -->
+<section id="preis" class="price-band">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Preis</div>
+      <h2>Einfach & fair</h2>
+    </div>
+    <div class="price-card">
+      <div class="amount">CHF 60.–<br><small>komplette Fusspflege · ca. 1 Stunde</small></div>
+      <ul>
+        <li>Entspannendes Fussbad</li>
+        <li>Fussdiagnose & Nagelpflege</li>
+        <li>Hornhaut entfernen</li>
+        <li>Verwöhnmassage</li>
+        <li>Lackieren auf Wunsch</li>
+      </ul>
+      <a href="tel:+41762446797" class="btn">📞 Termin vereinbaren</a>
+      <p class="hint">Günstiger für IV-Bezüger · Termine nach telefonischer Vereinbarung</p>
+    </div>
+  </div>
+</section>
+
+<section id="ueber" class="about">
+  <div class="wrap">
+    <div class="eyebrow center">Über mich</div>
+    <h2>Ihre Füsse in guten Händen</h2>
+    <p>Mit Herz und Sorgfalt kümmere ich mich um Ihr Wohlbefinden – dort, wo Sie sich am wohlsten fühlen: bei Ihnen zu Hause. Ob aus Zeitgründen oder weil der Weg beschwerlich ist, ich komme gerne zu Ihnen und nehme mir Zeit für Ihre Füsse.</p>
+    <p style="margin-top:22px"><a href="tel:+41762446797" class="btn ghost">📞 076 244 67 97</a></p>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Das sagen meine Kundinnen & Kunden</h2>
+    </div>
+    <div class="grid">
+      <div class="review"><div class="stars">★★★★★</div><p>„Ihre echten Bewertungen erscheinen hier – direkt auf der Startseite.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Wir zeigen die schönsten Rückmeldungen Ihrer Kundschaft.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„So gewinnen neue Kundinnen und Kunden sofort Vertrauen.“</p><b>Beispiel</b></div>
+    </div>
+    <p class="note">Hinweis (nur für die Demo): Hier binden wir Ihre echten Bewertungen ein.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Kontakt</div><h2>Termin anfragen</h2></div>
+    <div class="contact-grid">
+      <div>
+        <h3 style="color:#7fd3c6;font-size:22px;margin-bottom:18px">So erreichen Sie mich</h3>
+        <div class="contact-item"><div class="ico">📞</div><div><b>Telefon</b><a href="tel:+41762446797">076 244 67 97</a></div></div>
+        <div class="contact-item"><div class="ico">✉️</div><div><b>E-Mail</b><a href="mailto:beautyfeet.b@gmx.ch">beautyfeet.b@gmx.ch</a></div></div>
+        <div class="contact-item"><div class="ico">📍</div><div><b>Standort</b><a href="https://www.google.com/maps/dir/?api=1&destination=B%C3%A4ndliweg+30,+8048+Z%C3%BCrich" target="_blank">Bändliweg 30, 8048 Zürich →</a><br><span>Mobil in ganz Zürich unterwegs</span></div></div>
+        <div class="fbtns">
+          <a href="tel:+41762446797" class="btn">📞 Anrufen</a>
+          <a href="mailto:beautyfeet.b@gmx.ch" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.55)">✉️ E-Mail</a>
+        </div>
+      </div>
+      <form id="kontaktform" onsubmit="return sendMail(event)">
+        <h3>Schreiben Sie mir</h3>
+        <p class="sub">Ich melde mich so schnell wie möglich bei Ihnen zurück.</p>
+        <div class="field"><label for="n">Name</label><input id="n" required placeholder="Ihr Name"></div>
+        <div class="field"><label for="e">Telefon oder E-Mail</label><input id="e" required placeholder="Damit ich Sie erreichen kann"></div>
+        <div class="field"><label for="m">Nachricht</label><textarea id="m" required placeholder="Ihr Wunschtermin oder Ihre Frage"></textarea></div>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bereit für rundum gepflegte Füsse?</h2>
+    <p>Rufen Sie mich an – ich komme zu Ihnen nach Hause.</p>
+    <a href="tel:+41762446797" class="btn light">📞 076 244 67 97</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo">Beauty Feet <b>Bardiqi</b></a>
+    <p>Mobile Fusspflege · Zürich · 076 244 67 97</p>
+    <p style="margin-top:8px">© 2026 Beauty Feet Bardiqi. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){
+    ev.preventDefault();
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    var s='Terminanfrage über die Website – '+n;
+    var b='Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m;
+    window.location.href='mailto:beautyfeet.b@gmx.ch?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
+    return false;
+  }
+</script>
+</body>
+</html>
