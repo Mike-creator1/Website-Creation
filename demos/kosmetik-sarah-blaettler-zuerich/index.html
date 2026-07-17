@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosmetik Sarah Blättler – Kosmetikstudio Zürich Enge</title>
+<meta name="description" content="Kosmetik Sarah Blättler – Ihr Kosmetikstudio an der Breitingerstrasse 21 in Zürich. Gesichtsbehandlungen, Hand- & Fusspflege, Haarentfernung. Natürlichkeit & Qualität.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#7f8b64;        /* sage / olive */
+    --accent-deep:#5c6845;
+    --ink:#242621;
+    --muted:#6a6d61;
+    --bg:#f8f7f1;            /* warm cream */
+    --bg-soft:#ecefe1;       /* soft sage */
+    --bg-deep:#20241c;       /* deep forest */
+    --line:#e3e4d6;
+    --max:1160px;
+    --serif:'Marcellus',Georgia,serif;
+    --sans:'Jost',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.75;background:var(--bg);font-weight:400}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+  section{padding:104px 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
+  h2{font-size:clamp(32px,5vw,50px);margin-bottom:16px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.32em;font-size:12px;font-weight:500;color:var(--accent);margin-bottom:18px}
+  .lead{color:var(--muted);font-size:18px;max-width:600px;font-weight:300}
+  .center{text-align:center;margin-inline:auto}
+  .btn{display:inline-block;font-family:var(--sans);background:var(--accent);color:#fff;padding:15px 38px;border-radius:2px;font-weight:500;font-size:15px;letter-spacing:.04em;transition:.25s;border:1px solid var(--accent);cursor:pointer}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent);color:#fff}
+  .btn.light{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn.light:hover{background:#fff;color:var(--ink);border-color:#fff}
+  .rule{width:56px;height:1px;background:var(--accent);margin:0 auto 24px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(248,247,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .logo{font-family:var(--serif);font-size:25px;letter-spacing:.02em}
+  .logo b{color:var(--accent);font-weight:400}
+  .nav-links{display:flex;gap:36px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{color:var(--accent)!important;border:1px solid var(--accent);padding:9px 22px;border-radius:2px}
+  .nav-cta:hover{background:var(--accent);color:#fff!important}
+  .burger{display:none;font-size:26px;background:none;border:none;cursor:pointer;color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden;text-align:center;padding:128px 0 116px;background:
+    radial-gradient(760px 420px at 50% -12%,#dfe6cd 0%,transparent 62%),
+    linear-gradient(180deg,#eef1e2,var(--bg))}
+  .hero h1{font-size:clamp(44px,7.5vw,82px);line-height:1.04;margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{font-size:clamp(17px,2.3vw,21px);color:var(--muted);max-width:540px;margin:0 auto 38px;font-weight:300}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  .strip{background:var(--bg-deep);color:#d5d9c8}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 56px;padding:30px 26px;text-align:center}
+  .strip div{font-size:14px;letter-spacing:.05em;font-weight:300}
+  .strip b{color:var(--accent);font-weight:500}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+  .card{background:var(--bg);border:1px solid var(--line);padding:44px 34px;transition:.3s}
+  .card:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 24px 48px rgba(92,104,69,.12)}
+  .card .ico{font-size:28px;margin-bottom:18px}
+  .card h3{font-size:24px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px;font-weight:300}
+  .card .price{display:block;margin-top:16px;color:var(--accent);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+  .philo{background:var(--bg-soft)}
+  .philo .wrap{max-width:840px;text-align:center}
+  .philo blockquote{font-family:var(--serif);font-size:clamp(26px,3.6vw,36px);font-style:italic;line-height:1.35;color:var(--ink);margin:6px 0 24px}
+  .philo p{color:var(--muted);font-size:17px;font-weight:300}
+  .signature{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:22px;margin-top:28px}
+
+  .brands{border-top:1px solid var(--line)}
+  .brands .wrap{text-align:center}
+  .brand-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 40px;margin-top:22px}
+  .brand-row span{font-family:var(--serif);font-size:26px;color:var(--muted);letter-spacing:.04em}
+
+  .reviews .grid{grid-template-columns:repeat(3,1fr)}
+  .review{background:var(--bg);border:1px solid var(--line);padding:34px 30px}
+  .review .stars{color:var(--accent);letter-spacing:4px;margin-bottom:14px}
+  .review p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);margin-bottom:14px}
+  .review b{color:var(--accent-deep);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+  .note{background:#e8ecd9;border:1px dashed var(--accent);color:#586347;font-size:13px;padding:12px 18px;margin-top:30px;text-align:center;border-radius:2px}
+
+  .contact{background:var(--bg-deep);color:#d5d9c8}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:var(--accent)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;margin-top:50px;align-items:start}
+  .contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+  .contact-item .ico{font-size:19px;color:var(--accent)}
+  .contact-item b{display:block;margin-bottom:3px;color:#fff;font-weight:500;font-size:15px}
+  .contact-item a,.contact-item span{color:#b3b8a4;font-weight:300}
+  .contact-item a:hover{color:var(--accent)}
+  .hours-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-weight:300;font-size:15px}
+  .hours-row span:last-child{color:var(--accent);font-weight:400}
+  .fbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+  form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:36px 32px}
+  form h3{color:#fff;font-size:26px;margin-bottom:6px}
+  form .sub{color:#b3b8a4;font-size:14px;margin-bottom:22px;font-weight:300}
+  .field{margin-bottom:16px}
+  label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b3b8a4;margin-bottom:7px}
+  input,textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;padding:13px 15px;font-family:var(--sans);font-size:15px;border-radius:2px;transition:.2s}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.1)}
+  textarea{resize:vertical;min-height:120px}
+  form .btn{width:100%;margin-top:6px}
+
+  .cta{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{opacity:.95;font-size:18px;max-width:520px;margin:0 auto 32px;font-weight:300}
+
+  footer{background:#171a13;color:#868a7b;padding:48px 0;text-align:center;font-size:14px;font-weight:300}
+  footer .logo{color:#fff;margin-bottom:12px;display:inline-block}
+  footer .logo b{color:var(--accent)}
+
+  @media(max-width:860px){
+    .grid,.reviews .grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .nav-links{position:fixed;inset:80px 0 auto 0;background:var(--bg);flex-direction:column;padding:26px;gap:22px;border-bottom:1px solid var(--line);display:none}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+  @media(max-width:520px){ section{padding:70px 0} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Kosmetik <b>Sarah Blättler</b></a>
+    <div class="nav-links" id="menu">
+      <a href="#behandlungen">Behandlungen</a>
+      <a href="#philosophie">Über mich</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt" class="nav-cta">Kontakt</a>
+    </div>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Kosmetikstudio · Zürich Enge</div>
+    <h1>Natürliche Schönheit,<br><em>persönlich gepflegt.</em></h1>
+    <p>Willkommen bei Kosmetik Sarah Blättler – Ihrem Studio für professionelle Hautpflege mit Herz an der Breitingerstrasse in Zürich.</p>
+    <div class="hero-btns">
+      <a href="tel:+41797563915" class="btn">Jetzt anrufen</a>
+      <a href="#behandlungen" class="btn ghost">Behandlungen entdecken</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>Ausgebildete <b>Kosmetikerin</b></div>
+    <div>Fokus auf <b>Natürlichkeit</b></div>
+    <div>Hochwertige <b>Markenprodukte</b></div>
+  </div>
+</div>
+
+<!-- 👉 Beispielpreise – να μπουν οι πραγματικές -->
+<section id="behandlungen">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Mein Angebot</div>
+      <h2>Behandlungen</h2>
+      <p class="lead center">Sorgfältige Pflege, abgestimmt auf Ihre Haut und Ihre Bedürfnisse.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">🌿</div><h3>Gesichtsbehandlung</h3><p>Reinigung, Peeling und individuelle Pflege für ein frisches, gesundes Hautbild.</p><span class="price">ab CHF 120</span></div>
+      <div class="card"><div class="ico">💧</div><h3>Hand- &amp; Fusspflege</h3><p>Wohltuende Maniküre und Pediküre für gepflegte Hände und Füsse.</p><span class="price">ab CHF 55</span></div>
+      <div class="card"><div class="ico">🌸</div><h3>Haarentfernung</h3><p>Sanfte Enthaarung mit Wachs – gründlich und angenehm.</p><span class="price">ab CHF 30</span></div>
+      <div class="card"><div class="ico">✨</div><h3>Wimpern &amp; Brauen</h3><p>Färben und Formen für einen natürlich betonten Blick.</p><span class="price">ab CHF 30</span></div>
+      <div class="card"><div class="ico">🕊️</div><h3>Entspannungspflege</h3><p>Eine Auszeit für Gesicht und Sinne – Wohlbefinden pur.</p><span class="price">ab CHF 90</span></div>
+      <div class="card"><div class="ico">🎁</div><h3>Geschenkgutscheine</h3><p>Schenken Sie Pflege und Entspannung – der ideale Wohlfühl-Gutschein.</p><span class="price">nach Wunsch</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophie" class="philo">
+  <div class="wrap">
+    <div class="eyebrow">Über mich</div>
+    <div class="rule"></div>
+    <blockquote>„Schönheit beginnt mit gesunder, natürlich gepflegter Haut – und mit Zeit, die man sich für sich selbst nimmt.“</blockquote>
+    <p>Als ausgebildete Kosmetikerin lege ich Wert auf Natürlichkeit, Qualität und eine persönliche Beratung. In meinem Studio nehme ich mir Zeit für Sie und Ihre Haut – für Ergebnisse, die man sieht und fühlt.</p>
+    <div class="signature">Sarah Blättler</div>
+  </div>
+</section>
+
+<!-- Πραγματικές μάρκες που πουλάει (από το site της) -->
+<section class="brands">
+  <div class="wrap">
+    <div class="eyebrow">Ich arbeite mit</div>
+    <div class="brand-row">
+      <span>BABOR</span>
+      <span>The Remedy</span>
+      <span>Berdoues</span>
+    </div>
+  </div>
+</section>
+
+<section id="bewertungen" class="reviews">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Das sagen meine Kundinnen</h2>
+    </div>
+    <div class="grid">
+      <div class="review"><div class="stars">★★★★★</div><p>„Ihre echten Google-Bewertungen erscheinen hier – automatisch eingebunden.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Wir zeigen Ihre schönsten Kundenstimmen direkt auf der Startseite.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„So gewinnen neue Kundinnen sofort Vertrauen in Ihr Studio.“</p><b>Beispiel</b></div>
+    </div>
+    <p class="note">Hinweis (nur für die Demo): Hier binden wir Ihre echten Google-Bewertungen ein.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Kontakt</div><h2>Besuchen Sie mich</h2></div>
+    <div class="contact-grid">
+      <div>
+        <h3 style="font-family:var(--serif);color:var(--accent);font-size:24px;margin-bottom:20px">Kontakt &amp; Anfahrt</h3>
+        <div class="contact-item"><div class="ico">📍</div><div><b>Adresse</b><a href="https://www.google.com/maps/dir/?api=1&destination=Breitingerstrasse+21,+8002+Z%C3%BCrich" target="_blank">Breitingerstrasse 21, 8002 Zürich →</a></div></div>
+        <div class="contact-item"><div class="ico">📞</div><div><b>Telefon</b><a href="tel:+41797563915">+41 79 756 39 15</a></div></div>
+        <div class="contact-item"><div class="ico">✉️</div><div><b>E-Mail</b><a href="mailto:sarah.blaettler@bluewin.ch">sarah.blaettler@bluewin.ch</a></div></div>
+
+        <h3 style="font-family:var(--serif);color:var(--accent);font-size:24px;margin:32px 0 12px">Öffnungszeiten</h3>
+        <div class="hours-row"><span>Montag</span><span>Geschlossen</span></div>
+        <div class="hours-row"><span>Dienstag</span><span>09:00 – 19:00</span></div>
+        <div class="hours-row"><span>Mittwoch</span><span>09:00 – 18:00</span></div>
+        <div class="hours-row"><span>Donnerstag</span><span>09:00 – 19:00</span></div>
+        <div class="hours-row"><span>Freitag</span><span>09:00 – 18:00</span></div>
+        <div class="hours-row"><span>Samstag</span><span>09:00 – 15:00</span></div>
+        <div class="hours-row"><span>Sonntag</span><span>Geschlossen</span></div>
+        <p style="color:#9ba088;font-size:13.5px;margin-top:14px">Termine nach Voranmeldung.</p>
+
+        <div class="fbtns">
+          <a href="tel:+41797563915" class="btn">📞 Anrufen</a>
+          <a href="mailto:sarah.blaettler@bluewin.ch" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.55)">✉️ E-Mail</a>
+        </div>
+      </div>
+
+      <form id="kontaktform" onsubmit="return sendMail(event)">
+        <h3>Schreiben Sie mir</h3>
+        <p class="sub">Ich melde mich so schnell wie möglich bei Ihnen zurück.</p>
+        <div class="field"><label for="n">Name</label><input id="n" name="n" required placeholder="Ihr Name"></div>
+        <div class="field"><label for="e">E-Mail oder Telefon</label><input id="e" name="e" required placeholder="Damit ich Sie erreichen kann"></div>
+        <div class="field"><label for="m">Nachricht</label><textarea id="m" name="m" required placeholder="Wie kann ich Ihnen helfen?"></textarea></div>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Gönnen Sie sich eine Auszeit.</h2>
+    <p>Rufen Sie mich an oder schreiben Sie mir – ich freue mich auf Sie.</p>
+    <a href="tel:+41797563915" class="btn light">📞 +41 79 756 39 15</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo">Kosmetik <b>Sarah Blättler</b></a>
+    <p>Breitingerstrasse 21, 8002 Zürich · +41 79 756 39 15</p>
+    <p style="margin-top:8px">© 2026 Kosmetik Sarah Blättler. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){
+    ev.preventDefault();
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    var subject='Anfrage über die Website – '+n;
+    var body='Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m;
+    window.location.href='mailto:sarah.blaettler@bluewin.ch?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    return false;
+  }
+</script>
+</body>
+</html>
