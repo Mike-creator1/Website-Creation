@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Nails & Beauty – Nagelstudio Zürich Kreis 1</title>
+<meta name="description" content="Angel Nails & Beauty – Ihr Nagelstudio an der Uraniastrasse 34 im Herzen von Zürich. Maniküre, Pediküre, Nagelmodellage & Wimpern. Auch ohne Termin.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#8a5a7a;        /* plum / mauve chic */
+    --accent-deep:#6b4360;
+    --gold:#c2a05a;
+    --ink:#231d21;
+    --muted:#6f6570;
+    --bg:#faf7f8;
+    --bg-soft:#f1e9ee;
+    --bg-deep:#201a1e;
+    --line:#e9dee6;
+    --max:1150px;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'Jost',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.75;background:var(--bg);font-weight:400}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{padding:98px 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.14}
+  h2{font-size:clamp(30px,4.6vw,46px);margin-bottom:14px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:12px;font-weight:500;color:var(--accent);margin-bottom:16px}
+  .lead{color:var(--muted);font-size:18px;max-width:600px;font-weight:300}
+  .center{text-align:center;margin-inline:auto}
+  .btn{display:inline-block;font-family:var(--sans);background:var(--accent);color:#fff;padding:15px 36px;border-radius:999px;font-weight:500;font-size:15px;letter-spacing:.03em;transition:.25s;border:1px solid var(--accent);cursor:pointer}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px);box-shadow:0 12px 26px rgba(138,90,122,.28)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent);color:#fff}
+  .btn.light{background:#fff;color:var(--accent-deep);border-color:#fff}
+  .btn.light:hover{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
+  .rule{width:56px;height:1px;background:var(--gold);margin:0 auto 22px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(250,247,248,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.01em}
+  .logo b{color:var(--accent)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{color:var(--accent)!important;border:1px solid var(--accent);padding:9px 22px;border-radius:999px}
+  .nav-cta:hover{background:var(--accent);color:#fff!important}
+  .burger{display:none;font-size:26px;background:none;border:none;cursor:pointer;color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden;text-align:center;padding:120px 0 108px;background:
+    radial-gradient(740px 420px at 50% -12%,#e7d3e0 0%,transparent 62%),
+    linear-gradient(180deg,#f3e9ef,var(--bg))}
+  .hero .pill{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--accent-deep);padding:8px 18px;border-radius:999px;font-size:14px;font-weight:500;margin-bottom:22px;box-shadow:0 6px 18px rgba(138,90,122,.12)}
+  .hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin-bottom:20px;font-weight:500}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{font-size:clamp(17px,2.3vw,21px);color:var(--muted);max-width:540px;margin:0 auto 36px;font-weight:300}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  .strip{background:var(--bg-deep);color:#d9ccd4}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 54px;padding:28px 24px;text-align:center}
+  .strip div{font-size:14.5px;font-weight:300}
+  .strip b{color:var(--gold);font-weight:500}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:40px 30px;transition:.28s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(138,90,122,.12);border-color:var(--accent)}
+  .card .ico{font-size:30px;margin-bottom:14px}
+  .card h3{font-size:23px;margin-bottom:6px;font-weight:600}
+  .card p{color:var(--muted);font-size:15px;font-weight:300}
+  .card .price{display:block;margin-top:14px;color:var(--accent);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+
+  .about{background:var(--bg-soft)}
+  .about .wrap{max-width:820px;text-align:center}
+  .about blockquote{font-family:var(--serif);font-size:clamp(24px,3.3vw,32px);font-style:italic;line-height:1.4;margin:6px 0 20px}
+  .about p{color:var(--muted);font-size:17px;font-weight:300}
+
+  .reviews .grid{grid-template-columns:repeat(3,1fr)}
+  .review{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:32px 28px}
+  .review .stars{color:var(--gold);letter-spacing:3px;margin-bottom:12px}
+  .review p{font-family:var(--serif);font-style:italic;font-size:19px;margin-bottom:12px}
+  .review b{color:var(--accent-deep);font-size:13px;text-transform:uppercase;letter-spacing:.07em;font-weight:500}
+  .note{background:#f0e6ec;border:1px dashed var(--accent);color:#6f4a62;font-size:13px;padding:12px 18px;margin-top:28px;text-align:center;border-radius:8px}
+
+  .contact{background:var(--bg-deep);color:#d9ccd4}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:var(--gold)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:48px;align-items:start}
+  .contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+  .contact-item .ico{font-size:19px}
+  .contact-item b{display:block;margin-bottom:3px;color:#fff;font-weight:500;font-size:15px}
+  .contact-item a,.contact-item span{color:#b6a9b2;font-weight:300}
+  .contact-item a:hover{color:var(--gold)}
+  .hours-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-weight:300}
+  .hours-row span:last-child{color:var(--gold);font-weight:400}
+  .fbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+
+  form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:34px 30px}
+  form h3{color:#fff;font-size:24px;margin-bottom:6px}
+  form .sub{color:#b6a9b2;font-size:14px;margin-bottom:20px;font-weight:300}
+  .field{margin-bottom:15px}
+  label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#b6a9b2;margin-bottom:6px}
+  input,textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;padding:12px 14px;font-family:var(--sans);font-size:15px;border-radius:8px;transition:.2s}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.1)}
+  textarea{resize:vertical;min-height:110px}
+  form .btn{width:100%;margin-top:6px}
+
+  .cta{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{opacity:.95;font-size:18px;max-width:520px;margin:0 auto 30px;font-weight:300}
+
+  footer{background:#181316;color:#867b82;padding:46px 0;text-align:center;font-size:14px;font-weight:300}
+  footer .logo{color:#fff;margin-bottom:10px;display:inline-block}
+  footer .logo b{color:var(--accent)}
+
+  @media(max-width:860px){
+    .grid,.reviews .grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .nav-links{position:fixed;inset:78px 0 auto 0;background:var(--bg);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line);display:none}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+  @media(max-width:520px){ section{padding:66px 0} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Angel <b>Nails</b></a>
+    <div class="nav-links" id="menu">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt" class="nav-cta">Kontakt</a>
+    </div>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">✨ Auch ohne Termin – mitten in Zürich</div>
+    <h1>Perfekte Nägel,<br><em>im Herzen von Zürich.</em></h1>
+    <p>Willkommen bei Angel Nails &amp; Beauty an der Uraniastrasse – Ihr Nagelstudio für gepflegte Hände, Füsse und einen strahlenden Blick.</p>
+    <div class="hero-btns">
+      <a href="tel:+41797146784" class="btn">📞 Jetzt anrufen</a>
+      <a href="#leistungen" class="btn ghost">Unsere Leistungen</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>📍 <b>Kreis 1</b> · zentral am Uraniaplatz</div>
+    <div>🚶 Auch <b>ohne Termin</b> willkommen</div>
+    <div>💅 Erfahrenes <b>Team</b></div>
+  </div>
+</div>
+
+<!-- 👉 Beispielpreise – να μπουν οι πραγματικές -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Unser Angebot</div>
+      <h2>Leistungen</h2>
+      <p class="lead center">Professionelle Nagel- und Beautypflege in entspannter Atmosphäre.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">💅</div><h3>Maniküre</h3><p>Klassische und pflegende Maniküre für gepflegte Hände.</p><span class="price">ab CHF 35</span></div>
+      <div class="card"><div class="ico">🦶</div><h3>Pediküre</h3><p>Wohltuende Fusspflege – entspannend und gründlich.</p><span class="price">ab CHF 55</span></div>
+      <div class="card"><div class="ico">💖</div><h3>Nagelmodellage</h3><p>Gel- und Acrylmodellage in Wunschform und -farbe.</p><span class="price">ab CHF 75</span></div>
+      <div class="card"><div class="ico">🎨</div><h3>Nageldesign</h3><p>French, Ombré, Steinchen und individuelle Muster.</p><span class="price">ab CHF 10</span></div>
+      <div class="card"><div class="ico">✨</div><h3>Shellac</h3><p>Farblack mit Glanz, der wochenlang perfekt hält.</p><span class="price">ab CHF 45</span></div>
+      <div class="card"><div class="ico">👁️</div><h3>Wimpernverlängerung</h3><p>Ausdrucksstarke Wimpern für einen strahlenden Blick.</p><span class="price">ab CHF 90</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber" class="about">
+  <div class="wrap">
+    <div class="eyebrow">Über uns</div>
+    <div class="rule"></div>
+    <blockquote>„Bei uns sollen Sie sich verwöhnt fühlen – vom ersten Moment bis zum letzten Feinschliff.“</blockquote>
+    <p>Unser erfahrenes Team empfängt Sie in zentraler Lage direkt am Uraniaplatz. Ob spontan ohne Termin oder mit Voranmeldung – wir nehmen uns Zeit für Sie und sorgen für ein Ergebnis, das sich sehen lässt.</p>
+  </div>
+</section>
+
+<section id="bewertungen" class="reviews">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Das sagen unsere Kundinnen</h2>
+    </div>
+    <div class="grid">
+      <div class="review"><div class="stars">★★★★★</div><p>„Ihre echten Google-Bewertungen erscheinen hier – automatisch eingebunden.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Wir zeigen Ihre schönsten Kundenstimmen direkt auf der Startseite.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„So gewinnen neue Kundinnen sofort Vertrauen in Ihr Studio.“</p><b>Beispiel</b></div>
+    </div>
+    <p class="note">Hinweis (nur für die Demo): Hier binden wir Ihre echten Google-Bewertungen ein.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Kontakt</div><h2>Besuchen Sie uns</h2></div>
+    <div class="contact-grid">
+      <div>
+        <h3 style="font-family:var(--serif);color:var(--gold);font-size:23px;margin-bottom:18px">Kontakt &amp; Anfahrt</h3>
+        <div class="contact-item"><div class="ico">📍</div><div><b>Adresse</b><a href="https://www.google.com/maps/dir/?api=1&destination=Uraniastrasse+34,+8001+Z%C3%BCrich" target="_blank">Uraniastrasse 34, 8001 Zürich →</a></div></div>
+        <div class="contact-item"><div class="ico">📞</div><div><b>Telefon</b><a href="tel:+41797146784">079 714 67 84</a></div></div>
+        <div class="contact-item"><div class="ico">✉️</div><div><b>E-Mail</b><a href="mailto:angelnails.uraniastr34@gmail.com">angelnails.uraniastr34@gmail.com</a></div></div>
+        <div class="contact-item"><div class="ico">📷</div><div><b>Instagram</b><a href="https://www.instagram.com/angelnails_uraniaplatz34/" target="_blank">@angelnails_uraniaplatz34 →</a></div></div>
+
+        <h3 style="font-family:var(--serif);color:var(--gold);font-size:23px;margin:30px 0 12px">Öffnungszeiten</h3>
+        <!-- 👉 Ωράρια ΕΝΔΕΙΚΤΙΚΑ – να επιβεβαιωθούν με το μαγαζί -->
+        <div class="hours-row"><span>Montag – Freitag</span><span>09:00 – 19:00</span></div>
+        <div class="hours-row"><span>Samstag</span><span>09:00 – 18:00</span></div>
+        <div class="hours-row"><span>Sonntag</span><span>Geschlossen</span></div>
+
+        <div class="fbtns">
+          <a href="tel:+41797146784" class="btn">📞 Anrufen</a>
+          <a href="mailto:angelnails.uraniastr34@gmail.com" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.55)">✉️ E-Mail</a>
+        </div>
+      </div>
+
+      <form id="kontaktform" onsubmit="return sendMail(event)">
+        <h3>Schreiben Sie uns</h3>
+        <p class="sub">Wir melden uns so schnell wie möglich bei Ihnen zurück.</p>
+        <div class="field"><label for="n">Name</label><input id="n" required placeholder="Ihr Name"></div>
+        <div class="field"><label for="e">E-Mail oder Telefon</label><input id="e" required placeholder="Damit wir Sie erreichen"></div>
+        <div class="field"><label for="m">Nachricht</label><textarea id="m" required placeholder="Wie können wir Ihnen helfen?"></textarea></div>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Zeit für schöne Nägel?</h2>
+    <p>Kommen Sie vorbei – auch ohne Termin – oder rufen Sie uns an.</p>
+    <a href="tel:+41797146784" class="btn light">📞 079 714 67 84</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo">Angel <b>Nails</b></a>
+    <p>Uraniastrasse 34, 8001 Zürich · 079 714 67 84</p>
+    <p style="margin-top:8px">© 2026 Angel Nails &amp; Beauty. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){
+    ev.preventDefault();
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    var s='Anfrage über die Website – '+n;
+    var b='Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m;
+    window.location.href='mailto:angelnails.uraniastr34@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
+    return false;
+  }
+</script>
+</body>
+</html>
