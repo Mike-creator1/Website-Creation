@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AnaBogadinho BeautyCosmetic – Kosmetikstudio Uster</title>
+<meta name="description" content="AnaBogadinho BeautyCosmetic – Ihr Kosmetikstudio an der Freiestrasse 38 in Uster. Gesichtsbehandlungen, Microneedling, Wimpern, Augenbrauen, Nägel & Pediküre.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#b0714f;          /* warm terracotta / caramel */
+    --accent-deep:#8a5537;
+    --ink:#2b211c;
+    --muted:#6f635c;
+    --bg:#fdf9f5;              /* cream */
+    --bg-soft:#f5ebe2;
+    --bg-deep:#241c18;
+    --line:#ecdfd4;
+    --max:1120px;
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --bar:0px;                 /* mobile sticky bar height, set in media query */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.7;background:var(--bg);font-weight:400;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:80px 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
+  h2{font-size:clamp(28px,6vw,44px);margin-bottom:12px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.26em;font-size:11.5px;font-weight:600;color:var(--accent);margin-bottom:14px}
+  .lead{color:var(--muted);font-size:clamp(16px,4vw,18px);max-width:600px;font-weight:300}
+  .center{text-align:center;margin-inline:auto}
+  .rule{width:52px;height:1px;background:var(--accent);margin:0 auto 20px}
+
+  /* tap targets ≥48px για κινητό */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;
+    font-family:var(--sans);background:var(--accent);color:#fff;padding:14px 30px;border-radius:999px;
+    font-weight:600;font-size:16px;letter-spacing:.01em;transition:.25s;border:1.5px solid var(--accent);cursor:pointer;text-align:center}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent);color:#fff}
+  .btn.light{background:#fff;color:var(--accent-deep);border-color:#fff}
+  .btn.onDark{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+  .btn.onDark:hover{background:#fff;color:var(--ink)}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:60;background:rgba(253,249,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:var(--serif);font-size:21px;line-height:1.1}
+  .logo b{color:var(--accent);font-weight:400}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);letter-spacing:.04em;font-weight:500}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{color:var(--accent)!important;border:1.5px solid var(--accent);padding:9px 20px;border-radius:999px}
+  .burger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);font-size:26px;
+    width:48px;height:48px;align-items:center;justify-content:center}
+
+  /* HERO */
+  .hero{text-align:center;padding:76px 0 68px;background:
+    radial-gradient(680px 380px at 50% -10%,#f0d9c8 0%,transparent 64%),
+    linear-gradient(180deg,#f8e9dd,var(--bg))}
+  .hero h1{font-size:clamp(36px,9vw,68px);line-height:1.06;margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{font-size:clamp(16px,4.2vw,20px);color:var(--muted);max-width:520px;margin:0 auto 30px;font-weight:300}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* STRIP */
+  .strip{background:var(--bg-deep);color:#ddd0c6}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 44px;padding:22px 20px;text-align:center}
+  .strip div{font-size:14px;font-weight:300}
+  .strip b{color:var(--accent);font-weight:600}
+
+  /* TREATMENTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 26px}
+  .card h3{font-size:24px;margin-bottom:14px;color:var(--ink)}
+  .card ul{list-style:none}
+  .card li{color:var(--muted);font-size:15.5px;font-weight:300;padding:6px 0 6px 22px;position:relative}
+  .card li::before{content:'✦';position:absolute;left:0;color:var(--accent);font-size:12px;top:9px}
+  .pricenote{margin-top:26px;font-size:14.5px;color:var(--muted);text-align:center}
+
+  /* ABOUT */
+  .about{background:var(--bg-soft)}
+  .about .wrap{max-width:760px;text-align:center}
+  .about blockquote{font-family:var(--serif);font-size:clamp(21px,5.2vw,30px);font-style:italic;line-height:1.38;margin:4px 0 18px}
+  .about p{color:var(--muted);font-size:16.5px;font-weight:300}
+  .langs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .langs span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14px;color:var(--muted)}
+
+  /* REVIEWS */
+  .review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .review .stars{color:var(--accent);letter-spacing:3px;margin-bottom:10px}
+  .review p{font-family:var(--serif);font-style:italic;font-size:18px;margin-bottom:10px}
+  .review b{color:var(--accent-deep);font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+  .note{background:#f6e9de;border:1px dashed var(--accent);color:#7b5539;font-size:13px;padding:12px 16px;margin-top:26px;text-align:center;border-radius:10px}
+
+  /* CONTACT */
+  .contact{background:var(--bg-deep);color:#ddd0c6}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:var(--accent)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;margin-top:44px;align-items:start}
+  .ci{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+  .ci .ico{font-size:19px;flex:none}
+  .ci b{display:block;color:#fff;font-weight:600;font-size:15px;margin-bottom:2px}
+  .ci a,.ci span{color:#b9aaa0;font-weight:300;word-break:break-word}
+  .ci a:hover{color:var(--accent)}
+  .hours-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-weight:300;font-size:15px}
+  .hours-row span:last-child{color:var(--accent);font-weight:500;white-space:nowrap}
+  .fbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+  form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:30px 24px}
+  form h3{color:#fff;font-size:24px;margin-bottom:4px}
+  form .sub{color:#b9aaa0;font-size:14px;margin-bottom:20px;font-weight:300}
+  .field{margin-bottom:14px}
+  label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#b9aaa0;margin-bottom:6px}
+  /* font-size:16px = δεν κάνει zoom το iPhone */
+  input,textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;
+    padding:14px;font-family:var(--sans);font-size:16px;border-radius:10px;min-height:52px}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.11)}
+  textarea{resize:vertical;min-height:118px}
+  form .btn{width:100%;margin-top:6px}
+
+  .cta{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{opacity:.95;font-size:17px;max-width:500px;margin:0 auto 26px;font-weight:300}
+
+  footer{background:#1a1411;color:#867a73;padding:40px 0 calc(40px + var(--bar));text-align:center;font-size:13.5px;font-weight:300}
+  footer .logo{color:#fff;margin-bottom:8px;display:inline-block}
+  footer .logo b{color:var(--accent)}
+
+  /* ===== STICKY MOBILE ACTION BAR ===== */
+  .mobilebar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;
+    background:rgba(253,249,245,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .mobilebar a{flex:1;min-height:52px;font-size:15.5px;padding:12px 8px}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:900px){
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media(max-width:760px){
+    :root{--bar:74px}
+    section{padding:60px 0}
+    .grid{grid-template-columns:1fr;gap:16px}
+    .nav-links{position:fixed;inset:70px 0 auto 0;background:var(--bg);flex-direction:column;
+      padding:20px;gap:4px;border-bottom:1px solid var(--line);display:none;box-shadow:0 14px 30px rgba(0,0,0,.08)}
+    .nav-links.open{display:flex}
+    .nav-links a{width:100%;padding:15px 6px;font-size:16.5px;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-cta{text-align:center;margin-top:8px;padding:14px 20px}
+    .burger{display:flex}
+    .mobilebar{display:flex}
+    .hero{padding:56px 0 52px}
+    .hero-btns .btn{width:100%}
+    .strip .wrap{gap:10px 26px;padding:18px 20px}
+  }
+  @media(max-width:380px){
+    .wrap{padding:0 16px}
+    .card{padding:26px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">AnaBogadinho <b>BeautyCosmetic</b></a>
+    <div class="nav-links" id="menu">
+      <a href="#behandlungen">Behandlungen</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt" class="nav-cta">Termin anfragen</a>
+    </div>
+    <button class="burger" aria-label="Menü" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Kosmetikstudio · Uster</div>
+    <h1>Strahlende Haut,<br><em>persönlich betreut.</em></h1>
+    <p>Willkommen bei AnaBogadinho BeautyCosmetic an der Freiestrasse 38 – moderne Gesichtsbehandlungen, Wimpern, Augenbrauen und Nagelpflege.</p>
+    <div class="hero-btns">
+      <a href="tel:+41767359704" class="btn">📞 Jetzt anrufen</a>
+      <a href="#kontakt" class="btn ghost">Termin anfragen</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>🚶 <b>6 Min.</b> vom Bahnhof Uster</div>
+    <div>🗣️ <b>DE · EN · PT · ES</b></div>
+    <div>💳 Bar &amp; <b>TWINT</b></div>
+  </div>
+</div>
+
+<section id="behandlungen">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Mein Angebot</div>
+      <h2>Behandlungen</h2>
+      <p class="lead center">Individuell abgestimmt auf Sie – mit modernen Methoden und viel Sorgfalt.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Gesichtsbehandlungen</h3>
+        <ul>
+          <li>Tiefenreinigung</li><li>Microneedling</li><li>BB Glow</li>
+          <li>Hydralips</li><li>Plasma Pen</li><li>Dermaplaning</li><li>Hydrojelly-Maske</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Wimpern &amp; Augenbrauen</h3>
+        <ul>
+          <li>Wimpernverlängerung</li><li>Lash Lift</li><li>Brow Lift</li>
+          <li>Augenbrauen zupfen &amp; färben</li><li>VitaminBrows</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Nägel</h3>
+        <ul>
+          <li>Maniküre</li><li>Acrylmodellage</li><li>Gelmodellage</li><li>Gel-Lack</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pediküre</h3>
+        <ul>
+          <li>Klassische Fusspflege</li><li>Nagelpflege</li><li>Lackieren auf Wunsch</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricenote">Preise auf Anfrage – melden Sie sich gerne telefonisch oder über das Kontaktformular.</p>
+  </div>
+</section>
+
+<section id="ueber" class="about">
+  <div class="wrap">
+    <div class="eyebrow">Über mich</div>
+    <div class="rule"></div>
+    <blockquote>„Ich nehme mir Zeit für Sie – damit Sie sich in Ihrer Haut rundum wohlfühlen.“</blockquote>
+    <p>In meinem Studio in Uster berate ich Sie persönlich und arbeite mit modernen, schonenden Methoden. Ob eine entspannende Gesichtsbehandlung, ausdrucksstarke Wimpern oder gepflegte Nägel – bei mir sind Sie in guten Händen.</p>
+    <div class="langs"><span>Deutsch</span><span>English</span><span>Português</span><span>Español</span></div>
+  </div>
+</section>
+
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Das sagen meine Kundinnen</h2>
+    </div>
+    <div class="grid">
+      <div class="review"><div class="stars">★★★★★</div><p>„Ihre echten Google-Bewertungen erscheinen hier – automatisch eingebunden.“</p><b>Beispiel</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Wir zeigen Ihre schönsten Kundenstimmen direkt auf der Startseite.“</p><b>Beispiel</b></div>
+    </div>
+    <p class="note">Hinweis (nur für die Demo): Hier binden wir Ihre echten Bewertungen ein.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Kontakt</div><h2>Besuchen Sie mich</h2></div>
+    <div class="contact-grid">
+      <div>
+        <h3 style="font-family:var(--serif);color:var(--accent);font-size:23px;margin-bottom:18px">Kontakt &amp; Anfahrt</h3>
+        <div class="ci"><div class="ico">📍</div><div><b>Adresse</b><a href="https://www.google.com/maps/dir/?api=1&destination=Freiestrasse+38,+8610+Uster" target="_blank" rel="noopener">Freiestrasse 38, 8610 Uster →</a></div></div>
+        <div class="ci"><div class="ico">📞</div><div><b>Telefon</b><a href="tel:+41767359704">+41 76 735 97 04</a></div></div>
+        <div class="ci"><div class="ico">✉️</div><div><b>E-Mail</b><a href="mailto:anabogadinho@gmail.com">anabogadinho@gmail.com</a></div></div>
+        <div class="ci"><div class="ico">💳</div><div><b>Zahlung</b><span>Bar &amp; TWINT</span></div></div>
+
+        <h3 style="font-family:var(--serif);color:var(--accent);font-size:23px;margin:28px 0 10px">Öffnungszeiten</h3>
+        <div class="hours-row"><span>Montag</span><span>08:30 – 19:00</span></div>
+        <div class="hours-row"><span>Dienstag</span><span>08:30 – 19:00</span></div>
+        <div class="hours-row"><span>Mittwoch</span><span>Geschlossen</span></div>
+        <div class="hours-row"><span>Donnerstag</span><span>08:30 – 19:00</span></div>
+        <div class="hours-row"><span>Freitag</span><span>08:30 – 19:00</span></div>
+        <div class="hours-row"><span>Samstag</span><span>09:00 – 13:30</span></div>
+        <div class="hours-row"><span>Sonntag</span><span>Geschlossen</span></div>
+
+        <div class="fbtns">
+          <a href="tel:+41767359704" class="btn">📞 Anrufen</a>
+          <a href="mailto:anabogadinho@gmail.com" class="btn onDark">✉️ E-Mail</a>
+        </div>
+      </div>
+
+      <form onsubmit="return sendMail(event)">
+        <h3>Termin anfragen</h3>
+        <p class="sub">Schreiben Sie mir – ich melde mich so schnell wie möglich zurück.</p>
+        <div class="field"><label for="n">Name</label><input id="n" required placeholder="Ihr Name" autocomplete="name"></div>
+        <div class="field"><label for="e">E-Mail oder Telefon</label><input id="e" required placeholder="Damit ich Sie erreichen kann" autocomplete="tel"></div>
+        <div class="field"><label for="m">Ihre Nachricht</label><textarea id="m" required placeholder="Welche Behandlung wünschen Sie?"></textarea></div>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Zeit für sich selbst?</h2>
+    <p>Rufen Sie mich an oder schreiben Sie mir – ich freue mich auf Sie.</p>
+    <a href="tel:+41767359704" class="btn light">📞 +41 76 735 97 04</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo">AnaBogadinho <b>BeautyCosmetic</b></a>
+    <p>Freiestrasse 38, 8610 Uster · +41 76 735 97 04</p>
+    <p style="margin-top:6px">© 2026 AnaBogadinho BeautyCosmetic. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<!-- Sticky action bar – μόνο σε κινητό -->
+<div class="mobilebar">
+  <a href="tel:+41767359704" class="btn">📞 Anrufen</a>
+  <a href="#kontakt" class="btn ghost">Termin anfragen</a>
+</div>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){
+    ev.preventDefault();
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    var s='Terminanfrage über die Website – '+n;
+    var b='Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m;
+    window.location.href='mailto:anabogadinho@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
+    return false;
+  }
+</script>
+</body>
+</html>
