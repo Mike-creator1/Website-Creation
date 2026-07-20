@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Manu's Haircorner – Coiffeur Winterthur</title>
+<meta name="description" content="Manu's Haircorner – Ihr Coiffeur für Damen und Herren am Oberen Deutweg 40 in Winterthur. Schnitt, Farbe, Styling und Pflege.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#a8896a; --accent-deep:#7d6349;
+    --ink:#211f1d; --muted:#6c6660;
+    --bg:#fbf9f7; --soft:#f0eae3; --deep:#1c1a18; --line:#e6ded5;
+    --serif:'Bodoni Moda',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --bar:0px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.7;background:var(--bg);overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+  section{padding:88px 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.14}
+  h2{font-size:clamp(28px,5.4vw,44px);margin-bottom:12px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11.5px;font-weight:600;color:var(--accent);margin-bottom:14px}
+  .lead{color:var(--muted);font-size:clamp(16px,3.9vw,18px);font-weight:300;max-width:600px}
+  .center{text-align:center;margin-inline:auto}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;background:var(--accent);
+    color:#fff;padding:15px 34px;border-radius:2px;font-weight:600;font-size:16px;letter-spacing:.02em;
+    border:1.5px solid var(--accent);cursor:pointer;transition:.25s}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+
+  /* photo placeholder */
+  .ph{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    background:repeating-linear-gradient(45deg,#f4efe9,#f4efe9 12px,#efe8e0 12px,#efe8e0 24px);
+    border:2px dashed #d5c8b9;border-radius:3px;color:#a2907c;min-height:230px;text-align:center;padding:20px}
+  .ph .plus{font-size:34px;line-height:1;font-weight:300}
+  .ph em{font-style:normal;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .ph.tall{min-height:400px}
+  .ph.sq{min-height:210px}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(251,249,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--serif);font-size:22px}
+  .logo b{color:var(--accent);font-weight:400}
+  .nav-links{display:flex;gap:32px}
+  .nav-links a{font-size:14px;color:var(--muted);letter-spacing:.04em;font-weight:500}
+  .nav-links a:hover{color:var(--accent)}
+  .burger{display:none;background:none;border:none;font-size:25px;color:var(--ink);width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer}
+
+  .hero{padding:70px 0 76px;background:linear-gradient(180deg,var(--soft),var(--bg))}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .hero h1{font-size:clamp(38px,6.6vw,64px);line-height:1.05;margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:clamp(16px,4vw,19px);font-weight:300;margin-bottom:28px;max-width:440px}
+
+  .strip{background:var(--deep);color:#ddd3c8}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 46px;padding:24px 22px;text-align:center;font-size:14px;font-weight:300}
+  .strip b{color:var(--accent);font-weight:600}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .card{background:#fff;border:1px solid var(--line);padding:34px 28px}
+  .card h3{font-size:23px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px;font-weight:300}
+
+  .about{background:var(--soft)}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(21px,4.6vw,29px);line-height:1.4;margin-bottom:16px}
+  .about p{color:var(--muted);font-weight:300}
+  .sig{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px;margin-top:18px}
+
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+
+  .contact{background:var(--deep);color:#ddd3c8}
+  .contact h2{color:#fff}.contact .eyebrow{color:var(--accent)}
+  .cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;margin-top:44px;align-items:start}
+  .ci{display:flex;gap:14px;margin-bottom:20px}
+  .ci b{display:block;color:#fff;font-size:15px;font-weight:600;margin-bottom:2px}
+  .ci a,.ci span{color:#b7ada2;font-weight:300;word-break:break-word}
+  .ci a:hover{color:var(--accent)}
+  .hint{font-size:13px;color:#8d8378;font-weight:300;margin-top:6px}
+  form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);padding:32px 26px}
+  form h3{color:#fff;font-size:24px;margin-bottom:4px}
+  form .sub{color:#b7ada2;font-size:14px;margin-bottom:20px;font-weight:300}
+  label{display:block;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:#b7ada2;margin-bottom:6px}
+  .field{margin-bottom:14px}
+  input,textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;
+    padding:14px;font-family:var(--sans);font-size:16px;border-radius:2px;min-height:54px}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical;min-height:120px}
+  form .btn{width:100%;margin-top:4px}
+
+  footer{background:#151312;color:#847a71;padding:38px 0 calc(38px + var(--bar));text-align:center;font-size:13.5px;font-weight:300}
+  footer .logo{color:#fff;display:inline-block;margin-bottom:8px}
+
+  .mobilebar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(251,249,247,.97);
+    backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+  .mobilebar .btn{width:100%}
+
+  @media(max-width:900px){ .hero .wrap,.about .wrap,.cgrid{grid-template-columns:1fr;gap:34px} .grid3{grid-template-columns:1fr} .gal{grid-template-columns:1fr 1fr} }
+  @media(max-width:760px){
+    :root{--bar:76px} section{padding:62px 0}
+    .nav-links{position:fixed;inset:72px 0 auto 0;background:var(--bg);flex-direction:column;padding:18px;gap:0;
+      border-bottom:1px solid var(--line);display:none;box-shadow:0 14px 30px rgba(0,0,0,.08)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:16px 6px;font-size:16.5px;border-bottom:1px solid var(--line);width:100%}
+    .nav-links a:last-child{border:none}
+    .burger{display:flex} .mobilebar{display:block}
+    .hero .btn{width:100%}
+  }
+  @media(max-width:400px){ .gal{grid-template-columns:1fr} .wrap{padding:0 16px} }
+</style>
+</head>
+<body>
+
+<header><nav class="wrap">
+  <a href="#" class="logo">Manu's <b>Haircorner</b></a>
+  <div class="nav-links" id="menu">
+    <a href="#leistungen">Leistungen</a><a href="#ueber">Über uns</a><a href="#kontakt">Kontakt</a>
+  </div>
+  <button class="burger" aria-label="Menü" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Coiffeur · Winterthur</div>
+    <h1>Ihr Typ,<br><em>perfekt getroffen.</em></h1>
+    <p>Damen- und Herrencoiffeur am Oberen Deutweg – Schnitt, Farbe und Pflege mit persönlicher Beratung.</p>
+    <a href="#kontakt" class="btn">Termin anfragen</a>
+  </div>
+  <div class="ph tall"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+</div></section>
+
+<div class="strip"><div class="wrap">
+  <div><b>Damen &amp; Herren</b></div><div>Persönliche <b>Beratung</b></div><div>Oberer Deutweg 40, <b>Winterthur</b></div>
+</div></div>
+
+<section id="leistungen"><div class="wrap">
+  <div class="center"><div class="eyebrow">Angebot</div><h2>Leistungen</h2>
+    <p class="lead center">Handwerk, das zu Ihnen passt – vom klassischen Schnitt bis zur neuen Farbe.</p></div>
+  <div class="grid3">
+    <div class="card"><h3>Schnitt</h3><p>Damen- und Herrenschnitte, individuell auf Haartyp und Wunsch abgestimmt.</p></div>
+    <div class="card"><h3>Farbe</h3><p>Coloration, Strähnen und Ansatzfarbe für einen frischen, natürlichen Look.</p></div>
+    <div class="card"><h3>Pflege &amp; Styling</h3><p>Pflegebehandlungen und Styling für Alltag oder besondere Anlässe.</p></div>
+  </div>
+  <p class="lead center" style="margin-top:26px;font-size:15px">Preise auf Anfrage – wir beraten Sie gerne persönlich.</p>
+</div></section>
+
+<section id="ueber" class="about"><div class="wrap">
+  <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+  <div>
+    <div class="eyebrow">Über uns</div>
+    <blockquote>„Schöne Haare beginnen mit Zuhören.“</blockquote>
+    <p>In meinem Salon nehme ich mir Zeit für Sie: Wir besprechen in Ruhe, was zu Ihrem Haar, Ihrem Alltag und Ihrem Typ passt – und setzen es sorgfältig um.</p>
+    <div class="sig">Manuela Kägi</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="center"><div class="eyebrow">Einblicke</div><h2>Unsere Arbeiten</h2>
+    <p class="lead center">Hier zeigen wir Ihre schönsten Vorher-Nachher-Bilder.</p></div>
+  <div class="gal">
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+  </div>
+</div></section>
+
+<section id="kontakt" class="contact"><div class="wrap">
+  <div class="center"><div class="eyebrow">Kontakt</div><h2>Besuchen Sie uns</h2></div>
+  <div class="cgrid">
+    <div>
+      <div class="ci"><div>📍</div><div><b>Adresse</b>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Oberer+Deutweg+40,+8400+Winterthur" target="_blank" rel="noopener">Oberer Deutweg 40, 8400 Winterthur →</a></div></div>
+      <div class="ci"><div>✉️</div><div><b>E-Mail</b>
+        <a href="mailto:manus-haircorner@bluewin.ch">manus-haircorner@bluewin.ch</a></div></div>
+      <div class="ci"><div>🕐</div><div><b>Öffnungszeiten</b><span>Termine nach Vereinbarung</span>
+        <div class="hint">Ihre genauen Öffnungszeiten tragen wir hier gerne ein.</div></div></div>
+    </div>
+    <form onsubmit="return sendMail(event)">
+      <h3>Termin anfragen</h3>
+      <p class="sub">Schreiben Sie uns – wir melden uns zurück.</p>
+      <div class="field"><label for="n">Name</label><input id="n" required placeholder="Ihr Name" autocomplete="name"></div>
+      <div class="field"><label for="e">E-Mail oder Telefon</label><input id="e" required placeholder="Damit wir Sie erreichen"></div>
+      <div class="field"><label for="m">Ihre Nachricht</label><textarea id="m" required placeholder="Welchen Service wünschen Sie?"></textarea></div>
+      <button type="submit" class="btn">Nachricht senden</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a href="#" class="logo">Manu's <b style="color:var(--accent)">Haircorner</b></a>
+  <p>Oberer Deutweg 40, 8400 Winterthur</p>
+  <p style="margin-top:6px">© 2026 Manu's Haircorner. Alle Rechte vorbehalten.</p>
+</div></footer>
+
+<div class="mobilebar"><a href="#kontakt" class="btn">Termin anfragen</a></div>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){ev.preventDefault();
+    var n=n1.value,e=e1.value,m=m1.value;
+    location.href='mailto:manus-haircorner@bluewin.ch?subject='+encodeURIComponent('Anfrage über die Website – '+n)+'&body='+encodeURIComponent('Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m);
+    return false;}
+  var n1=document.getElementById('n'),e1=document.getElementById('e'),m1=document.getElementById('m');
+</script>
+</body>
+</html>

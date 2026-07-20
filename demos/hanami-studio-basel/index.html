@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hanami Studio – Nails & Lashes Basel</title>
+<meta name="description" content="Hanami Studio, Nails and Lashes – Ihr Nagelstudio an der Unteren Rebgasse 8 in Basel. Maniküre, Nageldesign und Wimpernverlängerung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#c47f92; --accent-deep:#9c5c6f;
+    --ink:#1f1a1c; --muted:#6d6266;
+    --bg:#fdfafb; --soft:#f7ecef; --deep:#191416; --line:#eddfe3;
+    --serif:'Shippori Mincho',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --bar:0px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.75;background:var(--bg);overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 22px}
+  section{padding:92px 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2}
+  h2{font-size:clamp(27px,5vw,40px);margin-bottom:12px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:11px;font-weight:600;color:var(--accent);margin-bottom:14px}
+  .lead{color:var(--muted);font-size:clamp(15.5px,3.8vw,17.5px);font-weight:300;max-width:580px}
+  .center{text-align:center;margin-inline:auto}
+  .rule{width:44px;height:1px;background:var(--accent);margin:0 auto 20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;background:var(--accent);
+    color:#fff;padding:15px 34px;border-radius:999px;font-weight:500;font-size:16px;letter-spacing:.02em;
+    border:1.5px solid var(--accent);cursor:pointer;transition:.25s}
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+
+  .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    background:repeating-linear-gradient(45deg,#faf1f3,#faf1f3 12px,#f5e8ec 12px,#f5e8ec 24px);
+    border:2px dashed #e2ccd3;border-radius:4px;color:#b6929d;min-height:220px;text-align:center;padding:20px}
+  .ph .plus{font-size:34px;line-height:1;font-weight:300}
+  .ph em{font-style:normal;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:500}
+  .ph.tall{min-height:400px}.ph.sq{min-height:205px}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(253,250,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--serif);font-size:22px;letter-spacing:.02em}
+  .logo b{color:var(--accent);font-weight:500}
+  .nav-links{display:flex;gap:32px}
+  .nav-links a{font-size:13.5px;color:var(--muted);letter-spacing:.05em;font-weight:500;text-transform:uppercase}
+  .nav-links a:hover{color:var(--accent)}
+  .burger{display:none;background:none;border:none;font-size:25px;color:var(--ink);width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer}
+
+  .hero{padding:74px 0 80px;background:radial-gradient(620px 340px at 78% 10%,#f6dde4 0%,transparent 62%),linear-gradient(180deg,var(--soft),var(--bg))}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .hero .kanji{font-family:var(--serif);font-size:13px;letter-spacing:.5em;color:var(--accent);margin-bottom:12px}
+  .hero h1{font-size:clamp(36px,6.2vw,58px);line-height:1.12;margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:clamp(16px,4vw,18.5px);font-weight:300;margin-bottom:28px;max-width:430px}
+
+  .strip{background:var(--deep);color:#dccfd4}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 46px;padding:24px 22px;text-align:center;font-size:14px;font-weight:300}
+  .strip b{color:var(--accent);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:36px 30px}
+  .card h3{font-size:23px;margin-bottom:12px}
+  .card ul{list-style:none}
+  .card li{color:var(--muted);font-size:15px;font-weight:300;padding:5px 0 5px 20px;position:relative}
+  .card li::before{content:'❀';position:absolute;left:0;color:var(--accent);font-size:11px;top:9px}
+
+  .about{background:var(--soft)}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about blockquote{font-family:var(--serif);font-size:clamp(20px,4.4vw,28px);line-height:1.45;margin-bottom:14px}
+  .about p{color:var(--muted);font-weight:300}
+
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+
+  .contact{background:var(--deep);color:#dccfd4}
+  .contact h2{color:#fff}.contact .eyebrow{color:var(--accent)}
+  .cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;margin-top:44px;align-items:start}
+  .ci{display:flex;gap:14px;margin-bottom:20px}
+  .ci b{display:block;color:#fff;font-size:15px;font-weight:600;margin-bottom:2px}
+  .ci a,.ci span{color:#b3a5aa;font-weight:300;word-break:break-word}
+  .ci a:hover{color:var(--accent)}
+  .hint{font-size:13px;color:#8a7f83;font-weight:300;margin-top:6px}
+  form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);padding:32px 26px;border-radius:4px}
+  form h3{color:#fff;font-size:24px;margin-bottom:4px}
+  form .sub{color:#b3a5aa;font-size:14px;margin-bottom:20px;font-weight:300}
+  label{display:block;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:#b3a5aa;margin-bottom:6px}
+  .field{margin-bottom:14px}
+  input,textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;
+    padding:14px;font-family:var(--sans);font-size:16px;border-radius:4px;min-height:54px}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical;min-height:118px}
+  form .btn{width:100%;margin-top:4px}
+
+  footer{background:#141012;color:#837579;padding:38px 0 calc(38px + var(--bar));text-align:center;font-size:13.5px;font-weight:300}
+  footer .logo{color:#fff;display:inline-block;margin-bottom:8px}
+
+  .mobilebar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(253,250,251,.97);
+    backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+  .mobilebar .btn{width:100%}
+
+  @media(max-width:900px){ .hero .wrap,.about .wrap,.cgrid{grid-template-columns:1fr;gap:34px} .grid2{grid-template-columns:1fr} .gal{grid-template-columns:1fr 1fr} }
+  @media(max-width:760px){
+    :root{--bar:76px} section{padding:64px 0}
+    .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--bg);flex-direction:column;padding:18px;gap:0;
+      border-bottom:1px solid var(--line);display:none;box-shadow:0 14px 30px rgba(0,0,0,.08)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:16px 6px;font-size:16px;border-bottom:1px solid var(--line);width:100%}
+    .nav-links a:last-child{border:none}
+    .burger{display:flex}.mobilebar{display:block}
+    .hero .btn{width:100%}
+  }
+  @media(max-width:400px){ .gal{grid-template-columns:1fr} .wrap{padding:0 16px} }
+</style>
+</head>
+<body>
+
+<header><nav class="wrap">
+  <a href="#" class="logo">Hanami <b>Studio</b></a>
+  <div class="nav-links" id="menu">
+    <a href="#leistungen">Leistungen</a><a href="#ueber">Über uns</a><a href="#kontakt">Kontakt</a>
+  </div>
+  <button class="burger" aria-label="Menü" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="kanji">花見 · NAILS &amp; LASHES</div>
+    <h1>Schönheit,<br><em>die aufblüht.</em></h1>
+    <p>Hanami Studio in Basel – Nageldesign und Wimpern mit Ruhe, Präzision und einem Auge fürs Detail.</p>
+    <a href="tel:+41782172858" class="btn">📞 Termin vereinbaren</a>
+  </div>
+  <div class="ph tall"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+</div></section>
+
+<div class="strip"><div class="wrap">
+  <div>Nails &amp; <b>Lashes</b></div><div>Mitten in <b>Basel</b></div><div>Termine nach <b>Vereinbarung</b></div>
+</div></div>
+
+<section id="leistungen"><div class="wrap">
+  <div class="center"><div class="eyebrow">Unser Angebot</div><h2>Leistungen</h2>
+    <p class="lead center">Sorgfältig ausgeführt – für ein Ergebnis, das lange schön bleibt.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>Nails</h3><ul>
+      <li>Maniküre</li><li>Gelmodellage</li><li>Gel-Lack</li><li>Nageldesign nach Wunsch</li><li>Auffüllen &amp; Reparatur</li>
+    </ul></div>
+    <div class="card"><h3>Lashes</h3><ul>
+      <li>Wimpernverlängerung</li><li>Auffüllen</li><li>Lash Lift</li><li>Augenbrauen formen</li>
+    </ul></div>
+  </div>
+  <p class="lead center" style="margin-top:26px;font-size:15px">Preise auf Anfrage – wir beraten Sie gerne.</p>
+</div></section>
+
+<section id="ueber" class="about"><div class="wrap">
+  <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+  <div>
+    <div class="eyebrow">Über uns</div>
+    <blockquote>„Wie die Kirschblüte: schön im Detail, und jeden Moment wert.“</blockquote>
+    <p>In unserem Studio an der Unteren Rebgasse nehmen wir uns Zeit für Sie. Ruhige Atmosphäre, saubere Arbeit und ein Ergebnis, mit dem Sie sich rundum wohlfühlen.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="center"><div class="eyebrow">Galerie</div><h2>Unsere Arbeiten</h2>
+    <p class="lead center">Hier zeigen wir Ihre schönsten Sets und Designs.</p></div>
+  <div class="gal">
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+    <div class="ph sq"><span class="plus">+</span><em>Ihr Foto hier</em></div>
+  </div>
+</div></section>
+
+<section id="kontakt" class="contact"><div class="wrap">
+  <div class="center"><div class="eyebrow">Kontakt</div><h2>Besuchen Sie uns</h2></div>
+  <div class="cgrid">
+    <div>
+      <div class="ci"><div>📍</div><div><b>Adresse</b>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Untere+Rebgasse+8,+4058+Basel" target="_blank" rel="noopener">Untere Rebgasse 8, 4058 Basel →</a></div></div>
+      <div class="ci"><div>📞</div><div><b>Telefon</b><a href="tel:+41782172858">078 217 28 58</a></div></div>
+      <div class="ci"><div>✉️</div><div><b>E-Mail</b><a href="mailto:hanamistudio@outlook.de">hanamistudio@outlook.de</a></div></div>
+      <div class="ci"><div>📷</div><div><b>Instagram</b><a href="https://www.instagram.com/hanamistudiobasel/" target="_blank" rel="noopener">@hanamistudiobasel →</a></div></div>
+      <div class="ci"><div>🕐</div><div><b>Öffnungszeiten</b><span>Termine nach Vereinbarung</span>
+        <div class="hint">Ihre genauen Öffnungszeiten tragen wir hier gerne ein.</div></div></div>
+    </div>
+    <form onsubmit="return sendMail(event)">
+      <h3>Termin anfragen</h3>
+      <p class="sub">Schreiben Sie uns – wir melden uns zurück.</p>
+      <div class="field"><label for="n">Name</label><input id="n" required placeholder="Ihr Name" autocomplete="name"></div>
+      <div class="field"><label for="e">E-Mail oder Telefon</label><input id="e" required placeholder="Damit wir Sie erreichen"></div>
+      <div class="field"><label for="m">Ihre Nachricht</label><textarea id="m" required placeholder="Welche Behandlung wünschen Sie?"></textarea></div>
+      <button type="submit" class="btn">Nachricht senden</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a href="#" class="logo">Hanami <b style="color:var(--accent)">Studio</b></a>
+  <p>Untere Rebgasse 8, 4058 Basel · 078 217 28 58</p>
+  <p style="margin-top:6px">© 2026 Hanami Studio, Nails and Lashes. Alle Rechte vorbehalten.</p>
+</div></footer>
+
+<div class="mobilebar"><a href="tel:+41782172858" class="btn">📞 Termin vereinbaren</a></div>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  function sendMail(ev){ev.preventDefault();
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    location.href='mailto:hanamistudio@outlook.de?subject='+encodeURIComponent('Terminanfrage über die Website – '+n)+'&body='+encodeURIComponent('Name: '+n+'\nKontakt: '+e+'\n\nNachricht:\n'+m);
+    return false;}
+</script>
+</body>
+</html>
