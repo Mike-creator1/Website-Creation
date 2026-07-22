@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ========================================================= -->
+<title>Wolf Estate Management – Professional Property Management</title>
+<meta name="description" content="Wolf Estate Management provides complete, professional management of properties and buildings — for owners, investors and corporate partners.">
+<!-- ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --brand:      #b3894a;   /* bronze gold */
+    --brand-dark: #96703a;
+    --navy:       #0e1c2b;   /* deep navy */
+    --navy-soft:  #16293d;
+    --ink:        #1b2531;
+    --muted:      #5f6b78;
+    --bg:         #ffffff;
+    --bg-soft:    #f6f4ef;   /* warm off-white */
+    --line:       #e7e2d8;
+    --radius:     14px;
+    --max:        1160px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Segoe UI',system-ui,sans-serif;color:var(--ink);line-height:1.7;background:var(--bg)}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  section{padding:96px 0}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.18;font-weight:600;letter-spacing:-.01em}
+  h2{font-size:clamp(30px,4vw,44px);margin-bottom:16px}
+  .kicker{display:inline-block;color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;font-family:'Inter',sans-serif}
+  .lead{color:var(--muted);font-size:18px;max-width:660px}
+  .center{text-align:center;margin-inline:auto}
+  .btn{display:inline-block;background:var(--brand);color:#fff;padding:15px 34px;border-radius:4px;font-weight:600;font-size:15px;letter-spacing:.02em;transition:.2s;border:1px solid var(--brand)}
+  .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn.ghost:hover{background:#fff;color:var(--navy);border-color:#fff;transform:translateY(-2px)}
+  .btn.dark{background:var(--navy);border-color:var(--navy)}
+  .btn.dark:hover{background:var(--navy-soft);border-color:var(--navy-soft)}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(14,28,43,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;flex-direction:column;line-height:1.1}
+  .logo b{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:.08em}
+  .logo span{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brand)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-weight:500;font-size:14.5px;color:#c8d2dc;transition:.2s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{background:var(--brand);color:#fff!important;padding:10px 20px;border-radius:4px;font-weight:600}
+  .nav-cta:hover{background:var(--brand-dark)}
+  .burger{display:none;font-size:26px;background:none;border:none;cursor:pointer;color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;
+    background:linear-gradient(rgba(10,20,32,.72),rgba(10,20,32,.55)),
+      url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=80') center/cover}
+  .hero .kicker{color:var(--brand)}
+  .hero h1{font-size:clamp(38px,6vw,68px);margin-bottom:22px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  .hero p{font-size:clamp(17px,2.2vw,20px);max-width:680px;margin-bottom:38px;color:#e8edf2}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-note{margin-top:56px;padding-top:26px;border-top:1px solid rgba(255,255,255,.22);display:flex;gap:38px;flex-wrap:wrap}
+  .hero-note div{font-size:14px;color:#cdd7e0;max-width:230px}
+  .hero-note b{display:block;color:#fff;font-size:15px;margin-bottom:3px}
+
+  /* ---------- AUDIENCE ---------- */
+  .audience{background:var(--bg-soft);padding:72px 0}
+  .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .aud{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
+  .aud svg{flex:none;margin-top:3px}
+  .aud b{display:block;font-size:15.5px;margin-bottom:2px}
+  .aud span{font-size:14px;color:var(--muted)}
+
+  /* ---------- ABOUT ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .split img{border-radius:var(--radius);height:100%;min-height:420px;object-fit:cover;box-shadow:0 24px 60px rgba(14,28,43,.18)}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  .pillar{border-left:3px solid var(--brand);padding:4px 0 4px 16px}
+  .pillar b{display:block;font-size:15px}
+  .pillar span{font-size:13.5px;color:var(--muted)}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--bg-soft)}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:.25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(14,28,43,.10);border-color:var(--brand)}
+  .card .ico{width:46px;height:46px;border-radius:10px;background:rgba(179,137,74,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h3{font-size:19px;margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:0}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  /* ---------- OWNERS ---------- */
+  .checklist{list-style:none;margin-top:26px}
+  .checklist li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line)}
+  .checklist li:last-child{border-bottom:none}
+  .check{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(179,137,74,.15);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:3px}
+  .checklist b{display:block;font-size:15.5px}
+  .checklist span{font-size:14px;color:var(--muted)}
+
+  /* ---------- INVESTORS (dark) ---------- */
+  .investors{background:var(--navy);color:#fff}
+  .investors h2{color:#fff}
+  .investors .lead{color:#aebbc8}
+  .inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+  .inv{background:var(--navy-soft);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:28px 26px;transition:.25s}
+  .inv:hover{border-color:var(--brand);transform:translateY(-4px)}
+  .inv h3{font-size:17.5px;margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700;color:#fff}
+  .inv p{font-size:14px;color:#aebbc8}
+  .inv .num{font-family:'Playfair Display',serif;font-size:15px;color:var(--brand);font-weight:700;letter-spacing:.12em;margin-bottom:12px;display:block}
+
+  /* ---------- PROCESS ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px;counter-reset:step}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;position:relative}
+  .step .n{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:rgba(179,137,74,.35);line-height:1;margin-bottom:12px}
+  .step b{display:block;font-size:15.5px;margin-bottom:5px}
+  .step span{font-size:13.5px;color:var(--muted)}
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio{background:var(--bg-soft)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+  .tile{position:relative;border-radius:12px;overflow:hidden}
+  .tile img{height:290px;width:100%;object-fit:cover;transition:.35s}
+  .tile:hover img{transform:scale(1.05)}
+  .tile figcaption{position:absolute;inset:auto 0 0 0;padding:44px 18px 14px;background:linear-gradient(transparent,rgba(10,20,32,.85));color:#fff;font-size:14px;font-weight:600}
+  .tile figcaption em{display:block;font-style:normal;font-weight:400;font-size:12px;color:#c9d3dc}
+  .port-note{margin-top:26px;text-align:center;font-size:13.5px;color:var(--muted)}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;margin-top:52px;align-items:start}
+  form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:0 18px 50px rgba(14,28,43,.07)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{display:block;font-size:13px;font-weight:600;margin:16px 0 6px;color:var(--ink)}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14.5px;color:var(--ink);background:#fdfcfa;transition:.2s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(179,137,74,.15)}
+  textarea{resize:vertical;min-height:110px}
+  .contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px}
+  .contact-item .cico{flex:none;width:42px;height:42px;border-radius:10px;background:rgba(179,137,74,.12);display:flex;align-items:center;justify-content:center}
+  .contact-item b{display:block;margin-bottom:2px;font-size:15px}
+  .contact-item span{color:var(--muted);font-size:14.5px}
+
+  /* ---------- CTA ---------- */
+  .cta{background:linear-gradient(rgba(10,20,32,.82),rgba(10,20,32,.82)),
+    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover;color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{color:#d5dde4;font-size:18px;max-width:560px;margin:0 auto 34px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#0a1520;color:#7f8b97;padding:46px 0;font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot .logo b{font-size:19px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1000px){
+    .grid4{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .aud-grid,.inv-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:860px){
+    section{padding:72px 0}
+    .split,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .split img{min-height:300px}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .nav-links{position:fixed;inset:76px 0 auto 0;background:var(--navy);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.1);display:none}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+  @media(max-width:560px){
+    .aud-grid,.inv-grid,.gallery,.grid4,.steps,.frow,.pillars{grid-template-columns:1fr}
+    form{padding:26px 20px}
+    .hero-note{gap:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo"><b>WOLF</b><span>Estate Management</span></a>
+    <div class="nav-links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#owners">For Owners</a>
+      <a href="#investors">For Investors</a>
+      <a href="#process">Process</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Request a Property Evaluation</a>
+    </div>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Comprehensive Property Management</span>
+    <h1>Your Property.<br>Professionally Managed.</h1>
+    <p>Wolf Estate Management takes over the complete management of properties and buildings — helping owners and investors protect their assets, secure steadier returns and free themselves from day-to-day involvement.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn">Request a Property Evaluation</a>
+      <a href="#services" class="btn ghost">Explore Our Services</a>
+    </div>
+    <div class="hero-note">
+      <div><b>For owners &amp; investors</b>We work for property owners — not as a rental listings platform.</div>
+      <div><b>One trusted partner</b>From marketing and tenant selection to daily management.</div>
+      <div><b>Full transparency</b>Organised payments, reporting and regular owner updates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIENCE ================= -->
+<section class="audience">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Who We Work With</span>
+      <h2>A management partner for every type of owner</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg><div><b>Apartment &amp; house owners</b><span>Individual flats, homes and entire residential buildings.</span></div></div>
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M2 21h20M4 21V7h10v14M14 11h6v10M7 11h1M7 15h1M10 11h1M10 15h1"/></svg><div><b>Furnished &amp; commercial owners</b><span>Furnished rooms, apartments and business premises.</span></div></div>
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg><div><b>Property investors</b><span>Investors who own — or plan to acquire — income properties.</span></div></div>
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M2 21h20M5 21V3h8v18M13 9h6v12M8 7h2M8 11h2M8 15h2"/></svg><div><b>Developers &amp; construction firms</b><span>Professional management for newly built projects.</span></div></div>
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="10" r="2.6"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M14.5 14.9c2.6.4 4.5 2.2 4.5 5.1"/></svg><div><b>Management companies</b><span>Partnerships and subcontracting with other property firms.</span></div></div>
+      <div class="aud"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg><div><b>Companies needing housing</b><span>Reliable accommodation for employees and partners.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap split">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Handing over property keys">
+    <div>
+      <span class="kicker">About Wolf Estate Management</span>
+      <h2>A steady, professional partner for your property</h2>
+      <p class="lead" style="margin-bottom:16px">You hand over the management of your property to one reliable partner — we take responsibility for the entire process.</p>
+      <p style="color:var(--muted);font-size:15.5px">From preparing and marketing the property, through careful tenant selection, to daily management, payments and technical coordination: Wolf Estate Management brings structure, experience and professional organisation to every property we manage. Our owners gain security, better organisation, steadier returns — and their time back.</p>
+      <div class="pillars">
+        <div class="pillar"><b>Reliability</b><span>Clear agreements, consistent execution.</span></div>
+        <div class="pillar"><b>Organisation</b><span>Structured processes for every property.</span></div>
+        <div class="pillar"><b>Transparency</b><span>Regular reporting and open communication.</span></div>
+        <div class="pillar"><b>Long-term view</b><span>Partnerships built to last for years.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Our Services</span>
+      <h2>Complete management, end to end</h2>
+      <p class="lead center">Every service your property needs — under one roof, with one point of contact.</p>
+    </div>
+    <div class="grid4">
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M14 3l7 7-9 9H5v-7l9-9zM13 6l5 5"/></svg></div>
+        <h3>Rental Management</h3>
+        <p>Preparation and presentation of the property, marketing, tenant search and full letting of your property.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+        <h3>Tenant Management</h3>
+        <p>Careful screening and selection of tenants, ongoing communication and professional handling of every request.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M2 21h20M5 21V5h9v16M14 10h5v11M8 8h2M8 12h2M8 16h2"/></svg></div>
+        <h3>Building Management</h3>
+        <p>Management of entire buildings — common areas, handovers, regular inspections and condition monitoring.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>
+        <h3>Furnished Apartments</h3>
+        <p>Specialised management of furnished apartments and rooms, including inventory and turnover coordination.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg></div>
+        <h3>Maintenance Coordination</h3>
+        <p>Coordination of cleaning, repairs and technical works — with reliable professionals and quality control.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></div>
+        <h3>Corporate Housing</h3>
+        <p>Housing solutions for companies that need well-managed accommodation for employees and partners.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Portfolio Management</h3>
+        <p>Management of multiple properties or entire portfolios, with consolidated oversight and reporting.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Tailored Solutions</h3>
+        <p>Contracts, payment monitoring and services shaped around the needs of each owner and investor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOR OWNERS ================= -->
+<section id="owners">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">For Property Owners</span>
+      <h2>Why owners hand us the keys</h2>
+      <p class="lead" style="margin-bottom:6px">Owning a property should not mean managing one. Here is what changes when Wolf Estate Management takes over.</p>
+      <ul class="checklist">
+        <li><span class="check">✓</span><div><b>You save time</b><span>No more calls, viewings, chasing payments or coordinating repairs.</span></div></li>
+        <li><span class="check">✓</span><div><b>Fewer tenant problems</b><span>Careful tenant selection and professional communication prevent issues early.</span></div></li>
+        <li><span class="check">✓</span><div><b>Your property stays protected</b><span>Regular inspections, documented handovers and continuous condition monitoring.</span></div></li>
+        <li><span class="check">✓</span><div><b>Everything is organised</b><span>Rent collection, payment monitoring, repairs and handovers run on clear processes.</span></div></li>
+        <li><span class="check">✓</span><div><b>Steadier, better returns</b><span>Professional presentation and letting keep your property performing consistently.</span></div></li>
+        <li><span class="check">✓</span><div><b>You stay informed</b><span>Regular updates and reporting — without the daily involvement.</span></div></li>
+      </ul>
+      <a href="#contact" class="btn dark" style="margin-top:28px">Discuss Your Property With Us</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Well-maintained residential property">
+  </div>
+</section>
+
+<!-- ================= FOR INVESTORS ================= -->
+<section id="investors" class="investors">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">For Investors &amp; Corporate Partners</span>
+      <h2>Built for larger portfolios and partnerships</h2>
+      <p class="lead center">For investors, developers, companies and fellow management firms, we offer structured cooperation at scale.</p>
+    </div>
+    <div class="inv-grid">
+      <div class="inv"><span class="num">01</span><h3>Multi-property management</h3><p>Consistent, centralised management across several properties with one dedicated contact.</p></div>
+      <div class="inv"><span class="num">02</span><h3>Entire buildings</h3><p>Full operational management of residential and mixed-use buildings, from tenants to technical care.</p></div>
+      <div class="inv"><span class="num">03</span><h3>Corporate employee housing</h3><p>Managed housing for your workforce and partners — organised, reliable and ready to move in.</p></div>
+      <div class="inv"><span class="num">04</span><h3>Subcontracting &amp; B2B cooperation</h3><p>Operational capacity for other management companies through clear subcontracting agreements.</p></div>
+      <div class="inv"><span class="num">05</span><h3>Long-term strategic partnership</h3><p>Stable, multi-year cooperation frameworks with developers, investors and institutions.</p></div>
+      <div class="inv"><span class="num">06</span><h3>Portfolio growth &amp; utilisation</h3><p>Structured development and better utilisation of existing property portfolios.</p></div>
+    </div>
+    <div class="center" style="margin-top:44px"><a href="#contact" class="btn">Discuss a Partnership</a></div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">How We Work</span>
+      <h2>A clear process, from first call to full management</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>First contact</b><span>You tell us about your property or portfolio — by phone or through the form.</span></div>
+      <div class="step"><div class="n">2</div><b>Property evaluation</b><span>We evaluate the property or portfolio and its potential on the market.</span></div>
+      <div class="step"><div class="n">3</div><b>Needs analysis</b><span>We analyse your goals and requirements as an owner or investor.</span></div>
+      <div class="step"><div class="n">4</div><b>Management proposal</b><span>You receive a clear, tailored management proposal.</span></div>
+      <div class="step"><div class="n">5</div><b>Agreement</b><span>We sign a transparent cooperation agreement.</span></div>
+      <div class="step"><div class="n">6</div><b>Takeover &amp; management</b><span>We take over the property and run its day-to-day management.</span></div>
+      <div class="step"><div class="n">7</div><b>Regular reporting</b><span>You receive regular updates on performance and condition.</span></div>
+      <div class="step" style="background:var(--navy);border-color:var(--navy);display:flex;flex-direction:column;justify-content:center">
+        <b style="color:#fff;font-size:17px;margin-bottom:10px">Ready to start?</b>
+        <a href="#contact" class="btn" style="text-align:center">Request an Evaluation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="portfolio">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Portfolio</span>
+      <h2>The kind of properties we manage</h2>
+      <p class="lead center">A representative selection of the property types under our management — from single apartments to entire buildings.</p>
+    </div>
+    <div class="gallery">
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80" alt="Residential apartment building"><figcaption>Residential building<em>Full building management</em></figcaption></figure>
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Modern family house"><figcaption>Private residence<em>Rental &amp; tenant management</em></figcaption></figure>
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Furnished apartment interior"><figcaption>Furnished apartment<em>Furnished management</em></figcaption></figure>
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Commercial office space"><figcaption>Commercial premises<em>Commercial management</em></figcaption></figure>
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate building"><figcaption>Corporate housing<em>Employee accommodation</em></figcaption></figure>
+      <figure class="tile"><img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=800&q=80" alt="Apartment building facade"><figcaption>Property portfolio<em>Multi-unit management</em></figcaption></figure>
+    </div>
+    <p class="port-note">This section presents the types of properties we manage — it is not a rental listings page.</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Contact</span>
+      <h2>Tell us about your property</h2>
+      <p class="lead center">Tell us about your property and discover how we can manage it professionally.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Demo form: opens an email with the entered details -->
+      <form onsubmit="return sendInquiry(this)">
+        <div class="frow">
+          <div><label>Full name *</label><input name="Name" required placeholder="Your full name"></div>
+          <div><label>Company</label><input name="Company" placeholder="Company (optional)"></div>
+        </div>
+        <div class="frow">
+          <div><label>Email *</label><input type="email" name="Email" required placeholder="you@example.com"></div>
+          <div><label>Phone</label><input name="Phone" placeholder="+41 ..."></div>
+        </div>
+        <div class="frow">
+          <div><label>Property location</label><input name="Location" placeholder="City / area"></div>
+          <div><label>Property type</label>
+            <select name="PropertyType">
+              <option>Apartment</option><option>House</option><option>Residential building</option>
+              <option>Furnished apartment / rooms</option><option>Commercial property</option>
+              <option>Property portfolio</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow">
+          <div><label>Number of properties / units</label><input name="Units" placeholder="e.g. 1, 5, 20+"></div>
+          <div><label>Desired service</label>
+            <select name="Service">
+              <option>Rental management</option><option>Tenant management</option><option>Building management</option>
+              <option>Furnished apartment management</option><option>Maintenance coordination</option>
+              <option>Corporate housing</option><option>Portfolio management</option><option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <label>Short description of your request</label>
+        <textarea name="Message" placeholder="Tell us briefly about your property and what you need..."></textarea>
+        <button type="submit" class="btn" style="margin-top:22px;width:100%;cursor:pointer">Send Inquiry</button>
+      </form>
+      <div>
+        <h3 style="margin-bottom:24px;font-size:22px">Direct contact</h3>
+        <!-- 👉 ΑΛΛΑΞΕ: πραγματική διεύθυνση / τηλέφωνο / email της εταιρείας -->
+        <div class="contact-item"><div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><b>Office</b><span>Zürich, Switzerland</span></div></div>
+        <div class="contact-item"><div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><b>Phone</b><span>+41 44 000 00 00</span></div></div>
+        <div class="contact-item"><div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b3894a" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><b>Email</b><span>info@wolf-estate.ch</span></div></div>
+        <div style="background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:8px">
+          <b style="font-size:15px">Who this form is for</b>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:6px">This form is intended for property owners, investors and corporate partners. We do not operate as a room or apartment listings platform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Professional Property Management You Can Trust</h2>
+    <p>Hand over the management of your property to a reliable partner — and get security, organisation and your time back.</p>
+    <a href="#contact" class="btn">Request a Property Evaluation</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <a href="#" class="logo"><b>WOLF</b><span>Estate Management</span></a>
+    <p>Comprehensive property &amp; building management for owners, investors and corporate partners.</p>
+    <p>© 2026 Wolf Estate Management. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Close mobile menu when a link is tapped
+  document.querySelectorAll('.nav-links a').forEach(a=>
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  // Demo contact form: opens the visitor's email client with the details pre-filled
+  function sendInquiry(f){
+    const d = new FormData(f);
+    let body = '';
+    for (const [k,v] of d.entries()) if(v) body += k + ': ' + v + '\n';
+    location.href = 'mailto:info@wolf-estate.ch'
+      + '?subject=' + encodeURIComponent('Property Management Inquiry – ' + (d.get('Name')||''))
+      + '&body=' + encodeURIComponent(body);
+    return false;
+  }
+</script>
+</body>
+</html>
