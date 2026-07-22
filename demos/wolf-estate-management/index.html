@@ -9,6 +9,12 @@
 <meta name="description" content="WolfEstate Management übernimmt die komplette professionelle Verwaltung von Immobilien und Liegenschaften für Eigentümer, Investoren und Firmenpartner.">
 <link rel="alternate" hreflang="de" href="index.html">
 <link rel="alternate" hreflang="en" href="en.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wolfestate.ch/">
+<meta property="og:title" content="WolfEstate Management | Professionelle Immobilienverwaltung">
+<meta property="og:description" content="WolfEstate Management übernimmt die komplette professionelle Verwaltung von Immobilien und Liegenschaften für Eigentümer, Investoren und Firmenpartner.">
+<meta property="og:image" content="https://wolfestate.ch/logo.png">
 <!-- ========================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +58,9 @@
   /* ---------- NAV ---------- */
   header{position:sticky;top:0;z-index:50;background:rgba(14,28,43,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
   nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:14px}
-  .logo{display:flex;flex-direction:column;line-height:1.1}
+  .logo{display:flex;align-items:center;gap:11px;line-height:1.1}
+  .logo-img{height:46px;width:auto;display:block}
+  .logo-text{display:flex;flex-direction:column}
   .logo b{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:.08em}
   .logo span{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brand)}
   .nav-links{display:flex;gap:24px;align-items:center;margin-left:auto}
@@ -187,7 +195,7 @@
 <!-- ================= NAV ================= -->
 <header>
   <nav class="wrap">
-    <a href="#" class="logo"><b>WOLFESTATE</b><span>Management</span></a>
+    <a href="#" class="logo"><img src="logo-mark.png" alt="" class="logo-img"><span class="logo-text"><b>WOLFESTATE</b><span>Management</span></span></a>
     <div class="nav-links" id="menu">
       <a href="#services">Leistungen</a>
       <a href="#owners">Eigentümer</a>
@@ -205,6 +213,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
+    <img src="logo-mark.png" alt="" style="height:120px;width:auto;margin-bottom:20px">
     <span class="kicker">Umfassende Immobilienverwaltung</span>
     <h1>Ihre Immobilie.<br>Professionell verwaltet.</h1>
     <p>WolfEstate Management übernimmt die komplette Verwaltung von Immobilien und Liegenschaften. Eigentümer und Investoren schützen so ihr Vermögen, erzielen stabilere Erträge und gewinnen wertvolle Zeit zurück.</p>
@@ -440,7 +449,7 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap foot">
-    <a href="#" class="logo"><b>WOLFESTATE</b><span>Management</span></a>
+    <img src="logo.png" alt="WolfEstate Management" style="height:120px;width:auto">
     <p>WolfEstate Management GmbH, Winterthurerstrasse 20, 8472 Seuzach, UID CHE-323.698.803</p>
     <p>© 2026 WolfEstate Management GmbH. Alle Rechte vorbehalten.</p>
   </div>
